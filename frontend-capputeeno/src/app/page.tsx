@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { PageWrapper } from './styles'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <p>Capputeeno Challenge</p>
-    </main>
+    <PageWrapper>
+    </PageWrapper>
   )
 }

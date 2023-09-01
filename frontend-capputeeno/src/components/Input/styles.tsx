@@ -1,5 +1,3 @@
-'use client'
-
 import { theme } from "@/app/theme";
 import styled from "styled-components";
 

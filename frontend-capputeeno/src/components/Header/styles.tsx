@@ -1,5 +1,3 @@
-'use client'
-
 import { theme } from "@/app/theme";
 import { styled } from "styled-components";
 
@@ -28,4 +26,11 @@ export const InputContainer = styled.div`
       top: 50%;
       transform: translateY(-50%);
   }
+`
+
+export const WrapperRightContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 `

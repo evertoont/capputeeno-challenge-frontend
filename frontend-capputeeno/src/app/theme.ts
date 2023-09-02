@@ -7,6 +7,11 @@ export const colors = {
   primary: "#F0F0F5",
 };
 
+export const shadows = {
+  shadowOne: "0px 4px 12px 0px rgba(0, 0, 0, 0.10);",
+};
+
 export const theme = {
   colors,
+  shadows,
 };

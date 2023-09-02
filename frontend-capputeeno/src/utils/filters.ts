@@ -1,40 +1,40 @@
 import {
   FilterItem,
-  FilterType,
+  FilterTypes,
   PriorityFilterItem,
-  PriorityType,
+  PriorityTypes,
 } from "@/types/filters";
 
-export const filterItems: FilterItem[] = [
+export const filterItemsByType: FilterItem[] = [
   {
     label: "Todos os produtos",
-    type: FilterType.ALL,
+    type: FilterTypes.ALL,
   },
   {
     label: "Camisetas",
-    type: FilterType.SHIRT,
+    type: FilterTypes.SHIRT,
   },
   {
     label: "Canecas",
-    type: FilterType.MUG,
+    type: FilterTypes.MUG,
   },
 ];
 
 export const priorityFilterItems: PriorityFilterItem[] = [
   {
     label: "Novidades",
-    type: PriorityType.NEWS,
+    type: PriorityTypes.NEWS,
   },
   {
     label: "Preço: Maior - menor",
-    type: PriorityType.BIGGEST_PRICE,
+    type: PriorityTypes.BIGGEST_PRICE,
   },
   {
     label: "Preço: Menor - maior",
-    type: PriorityType.MINOR_PRICE,
+    type: PriorityTypes.MINOR_PRICE,
   },
   {
     label: "Mais vendidos",
-    type: PriorityType.POPULARITY,
+    type: PriorityTypes.POPULARITY,
   },
 ];

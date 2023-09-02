@@ -1,10 +1,10 @@
-export enum FilterType {
+export enum FilterTypes {
   "ALL",
   "SHIRT",
   "MUG",
 }
 
-export enum PriorityType {
+export enum PriorityTypes {
   "NEWS",
   "BIGGEST_PRICE",
   "MINOR_PRICE",
@@ -13,10 +13,10 @@ export enum PriorityType {
 
 export interface FilterItem {
   label: string;
-  type: FilterType;
+  type: FilterTypes;
 }
 
 export interface PriorityFilterItem {
   label: string;
-  type: PriorityType;
+  type: PriorityTypes;
 }

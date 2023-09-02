@@ -9,11 +9,19 @@ import {
   MainButtonSelected,
 } from "./styles";
 import { priorityFilterItems } from "@/utils/filters";
+import { useFilter } from "@/hooks/useFilter";
+import { PriorityTypes } from "@/types/filters";
 
 export function FilterByPriority() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const { setActiveFilterByPriority } = useFilter();
 
   const handleOpenFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
+  const handleUpdateFilterPriority = (priorityValue: PriorityTypes) => {
+    setActiveFilterByPriority(priorityValue);
     setIsFilterOpen(!isFilterOpen);
   };
 
@@ -28,7 +36,10 @@ export function FilterByPriority() {
         <FilterWrapperOptions>
           {priorityFilterItems.map((item) => {
             return (
-              <FilterOption onClick={handleOpenFilter} key={item.type}>
+              <FilterOption
+                onClick={() => handleUpdateFilterPriority(item.type)}
+                key={item.type}
+              >
                 {item.label}
               </FilterOption>
             );

@@ -5,4 +5,4 @@ export const FilterContainer = styled.div`
   align-items: start;
   width: 100%;
   justify-content: space-between;
-`
+`;

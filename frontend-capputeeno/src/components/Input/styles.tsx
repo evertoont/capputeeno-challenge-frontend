@@ -8,7 +8,7 @@ export const InputWrapper = styled.input`
   padding: 10px 16px;
 
   background-color: ${theme.colors.secondary};
-  
+
   font-family: inherit;
   font-weight: 400;
   font-size: 14px;
@@ -18,4 +18,4 @@ export const InputWrapper = styled.input`
   &:focus {
     outline: none;
   }
-  `
+`;

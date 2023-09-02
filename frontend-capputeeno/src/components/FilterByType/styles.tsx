@@ -11,18 +11,19 @@ export const FilterList = styled.ul`
   justify-content: center;
   list-style: none;
   gap: 40px;
-`
+`;
 
 export const FilterItem = styled.li<FilterItemProps>`
   font-family: inherit;
   font-size: 16px;
   color: ${theme.colors.textDark};
-  font-weight: ${props => props.isActive ? 600 : 400};
+  font-weight: ${(props) => (props.isActive ? 600 : 400)};
   line-height: 22px;
   text-transform: uppercase;
   text-align: center;
 
   cursor: pointer;
 
-  border-bottom: ${props => props.isActive ? `4px solid ${theme.colors.orange}` : 'none'};
-`
+  border-bottom: ${(props) =>
+    props.isActive ? `4px solid ${theme.colors.orange}` : "none"};
+`;

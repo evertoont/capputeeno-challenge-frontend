@@ -1,28 +1,29 @@
-import { Header } from '@/components/Header'
-import './globals.css'
-import type { Metadata } from 'next'
-import { Saira } from 'next/font/google'
+import { Header } from "@/components/Header";
+import "./globals.css";
+import type { Metadata } from "next";
+import { Saira } from "next/font/google";
 
-const saira = Saira({ 
+const saira = Saira({
   weight: ["300", "400", "500", "600"],
-  subsets: ['latin'] })
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: 'Capputeeno - Challenge',
-  description: 'Capputeeno - Challenge E-commerce',
-}
+  title: "Capputeeno - Challenge",
+  description: "Capputeeno - Challenge E-commerce",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={saira.className}>
         <Header />
         {children}
-        </body>
+      </body>
     </html>
-  )
+  );
 }

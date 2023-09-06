@@ -5,6 +5,9 @@ export const colors = {
   delete: "#DE3838",
   orange: "#FFA585",
   primary: "#F0F0F5",
+  shapes: "#DCE2E6",
+  secondTextDark: "#41414D",
+  shapesDark: "#09090A",
 };
 
 export const shadows = {

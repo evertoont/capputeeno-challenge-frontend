@@ -14,3 +14,11 @@ export const DefaultPageLayout = styled.div`
   padding: 34px 160px;
   background-color: ${theme.colors.primary};
 `;
+
+export const Divider = styled.span`
+  width: 100%;
+  height: 1px;
+  margin: 8px auto;
+  padding: 0px;
+  background: ${theme.colors.shapes};
+`;

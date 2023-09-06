@@ -2,6 +2,7 @@
 
 import { useProducts } from "@/hooks/useProducts";
 import { ListContainer } from "./styles";
+import { ProductCard } from "../ProductCard";
 
 export function ProductsList() {
   const { data: dataAllProducts } = useProducts();
@@ -10,11 +11,12 @@ export function ProductsList() {
     <ListContainer>
       {dataAllProducts?.map((product) => {
         return (
-          <li key={product.id}>
-            <img src={product.image_url} alt={product.name} />
-            <strong>{product.name}</strong>
-            <span>{product.price_in_cents}</span>
-          </li>
+          <ProductCard
+            key={product.id}
+            image={product.image_url}
+            name={product.name}
+            price={product.price_in_cents}
+          />
         );
       })}
     </ListContainer>

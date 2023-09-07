@@ -8,7 +8,7 @@ export function useProducts() {
   const { searchProduct, activeFilterByType } = useFilter();
   const query = mountQueryFilters(activeFilterByType);
   const searchProductDeferred = useDeferredValue(searchProduct);
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: () => fetchData(query),
     queryKey: ["products", activeFilterByType],
     staleTime: 1000 * 60 * 1,
@@ -23,5 +23,6 @@ export function useProducts() {
 
   return {
     data: filteredData,
+    isLoading,
   };
 }

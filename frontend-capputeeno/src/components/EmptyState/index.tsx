@@ -2,15 +2,15 @@ import { Empty } from "../icons/empty";
 import { EmptyContainer, EmptyMessage } from "./styles";
 
 interface EmptyStateProps {
-  message?: string;
+  children?: React.ReactNode;
 }
 
 export function EmptyState(props: EmptyStateProps) {
-  const { message } = props;
+  const { children } = props;
 
   return (
     <EmptyContainer>
-      <EmptyMessage>{message}</EmptyMessage>
+      <EmptyMessage>{children}</EmptyMessage>
       <Empty />
     </EmptyContainer>
   );

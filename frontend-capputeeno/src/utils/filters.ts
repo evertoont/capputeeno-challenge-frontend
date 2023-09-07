@@ -38,3 +38,13 @@ export const priorityFilterItems: PriorityFilterItem[] = [
     type: PriorityTypes.POPULARITY,
   },
 ];
+
+export const getCategoryByType = (type: FilterTypes) => {
+  const categoryMap = {
+    [FilterTypes.ALL]: "all",
+    [FilterTypes.MUG]: "mugs",
+    [FilterTypes.SHIRT]: "t-shirts",
+  };
+
+  return categoryMap[type];
+};

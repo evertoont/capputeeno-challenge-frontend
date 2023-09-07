@@ -1,31 +1,14 @@
-import { ProductsFetchResponse } from "@/types/produtcs";
-import axios from "axios";
 import { useQuery } from "react-query";
 import { useFilter } from "./useFilter";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
-
-const fetchData = async (query: string): Promise<ProductsFetchResponse> => {
-  const response = await axios.post(API_URL, { query });
-
-  return response.data;
-};
+import { fetchData } from "@/modules/resource";
+import { mountQueryFilters } from "@/modules/mountQueryFilters";
 
 export function useProducts() {
-  const { searchProduct } = useFilter();
+  const { searchProduct, activeFilterByType } = useFilter();
+  const query = mountQueryFilters(activeFilterByType);
   const { data } = useQuery({
-    queryKey: "products",
-    queryFn: () =>
-      fetchData(`
-        query {
-          allProducts {
-            id
-            name
-            price_in_cents
-            image_url
-          }
-        }
-      `),
+    queryFn: () => fetchData(query),
+    queryKey: ["products", activeFilterByType],
     staleTime: 1000 * 60 * 1,
   });
 

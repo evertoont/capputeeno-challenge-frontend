@@ -8,11 +8,11 @@ interface FilterContextProps {
 }
 
 export const FilterContext = createContext({
-  activeFilterByType: FilterTypes.ALL,
   activeFilterByPriority: PriorityTypes.POPULARITY,
-  setActiveFilterByType: (filter: FilterTypes) => {},
-  setActiveFilterByPriority: (filter: PriorityTypes) => {},
+  activeFilterByType: FilterTypes.ALL,
   searchProduct: "",
+  setActiveFilterByPriority: (filter: PriorityTypes) => {},
+  setActiveFilterByType: (filter: FilterTypes) => {},
   setSearchProduct: (search: string) => {},
 });
 

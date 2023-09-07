@@ -2,6 +2,7 @@
 
 import { Saira_Stencil_One } from "next/font/google";
 import {
+  ClearIconButton,
   HeaderWrapper,
   InputContainer,
   Logo,
@@ -11,6 +12,7 @@ import { Input } from "../Input";
 import { SearchIcon } from "../icons/search";
 import { CartControl } from "../CartControl";
 import { useFilter } from "@/hooks/useFilter";
+import { CloseIcon } from "../icons/close";
 
 const sairaStencil = Saira_Stencil_One({
   weight: ["400"],
@@ -22,6 +24,10 @@ export function Header() {
 
   const handleChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchProduct(event.target.value);
+  };
+
+  const handleClearSearch = () => {
+    setSearchProduct("");
   };
 
   return (
@@ -37,7 +43,13 @@ export function Header() {
             value={searchProduct}
             onChange={handleChangeSearch}
           />
-          <SearchIcon />
+          {searchProduct ? (
+            <ClearIconButton onClick={handleClearSearch}>
+              <CloseIcon />
+            </ClearIconButton>
+          ) : (
+            <SearchIcon />
+          )}
         </InputContainer>
         <CartControl />
       </WrapperRightContent>

@@ -34,3 +34,9 @@ export const WrapperRightContent = styled.div`
   justify-content: center;
   gap: 24px;
 `;
+
+export const ClearIconButton = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;

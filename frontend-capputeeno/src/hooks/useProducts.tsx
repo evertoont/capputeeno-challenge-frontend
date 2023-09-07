@@ -2,10 +2,12 @@ import { useQuery } from "react-query";
 import { useFilter } from "./useFilter";
 import { fetchData } from "@/modules/resource";
 import { mountQueryFilters } from "@/modules/mountQueryFilters";
+import { useDeferredValue } from "react";
 
 export function useProducts() {
   const { searchProduct, activeFilterByType } = useFilter();
   const query = mountQueryFilters(activeFilterByType);
+  const searchProductDeferred = useDeferredValue(searchProduct);
   const { data } = useQuery({
     queryFn: () => fetchData(query),
     queryKey: ["products", activeFilterByType],
@@ -14,7 +16,9 @@ export function useProducts() {
 
   const allProducts = data?.data?.allProducts;
   const filteredData = allProducts?.filter((product) => {
-    return product.name.toLowerCase().includes(searchProduct.toLowerCase());
+    return product.name
+      .toLowerCase()
+      .includes(searchProductDeferred.toLowerCase());
   });
 
   return {

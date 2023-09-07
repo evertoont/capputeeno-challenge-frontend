@@ -1,6 +1,7 @@
 import { ProductsFetchResponse } from "@/types/produtcs";
 import axios from "axios";
 import { useQuery } from "react-query";
+import { useFilter } from "./useFilter";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
@@ -11,6 +12,7 @@ const fetchData = async (query: string): Promise<ProductsFetchResponse> => {
 };
 
 export function useProducts() {
+  const { searchProduct } = useFilter();
   const { data } = useQuery({
     queryKey: "products",
     queryFn: () =>
@@ -27,7 +29,12 @@ export function useProducts() {
     staleTime: 1000 * 60 * 1,
   });
 
+  const allProducts = data?.data?.allProducts;
+  const filteredData = allProducts?.filter((product) => {
+    return product.name.toLowerCase().includes(searchProduct.toLowerCase());
+  });
+
   return {
-    data: data?.data?.allProducts,
+    data: filteredData,
   };
 }

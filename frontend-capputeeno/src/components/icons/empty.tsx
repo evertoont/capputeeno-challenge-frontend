@@ -68,10 +68,10 @@ export function Empty() {
         transform="translate(-201.25 -32.75)"
         fill="#2f2e41"
       />
-      <circle cx="559" cy="744.5" r="43" fill="#6c63ff" />
-      <circle cx="54" cy="729.5" r="43" fill="#6c63ff" />
-      <circle cx="54" cy="672.5" r="31" fill="#6c63ff" />
-      <circle cx="54" cy="624.5" r="22" fill="#6c63ff" />
+      <circle cx="559" cy="744.5" r="43" fill="#d27f06" />
+      <circle cx="54" cy="729.5" r="43" fill="#d27f06" />
+      <circle cx="54" cy="672.5" r="31" fill="#d27f06" />
+      <circle cx="54" cy="624.5" r="22" fill="#d27f06" />
     </svg>
   );
 }

@@ -7,9 +7,10 @@ import { EmptyState } from "../EmptyState";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { theme } from "@/app/theme";
+import { ErrorState } from "../ErrorState";
 
 export function ProductsList() {
-  const { data: dataAllProducts, isLoading } = useProducts();
+  const { data: dataAllProducts, isLoading, isError } = useProducts();
 
   const isDataAllProductsEmpty =
     !dataAllProducts || dataAllProducts.length === 0;
@@ -38,6 +39,10 @@ export function ProductsList() {
         />
       </SkeletonContainer>
     );
+  }
+
+  if (isError) {
+    return <ErrorState>"Ops! Parece que algo deu errado."</ErrorState>;
   }
 
   return (

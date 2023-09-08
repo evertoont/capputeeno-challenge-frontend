@@ -48,3 +48,20 @@ export const getCategoryByType = (type: FilterTypes) => {
 
   return categoryMap[type];
 };
+
+export const getPriorityByType = (type: PriorityTypes) => {
+  const priorityMap = {
+    [PriorityTypes.NEWS]: { sortField: "created_at", sortOrder: "ASC" },
+    [PriorityTypes.BIGGEST_PRICE]: {
+      sortField: "price_in_cents",
+      sortOrder: "DSC",
+    },
+    [PriorityTypes.MINOR_PRICE]: {
+      sortField: "price_in_cents",
+      sortOrder: "ASC",
+    },
+    [PriorityTypes.POPULARITY]: { sortField: "sales", sortOrder: "DSC" },
+  };
+
+  return priorityMap[type];
+};

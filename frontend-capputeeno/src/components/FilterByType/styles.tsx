@@ -2,7 +2,7 @@ import { theme } from "@/app/theme";
 import styled from "styled-components";
 
 interface FilterItemProps {
-  isActive?: boolean;
+  isActive: boolean;
 }
 
 export const FilterList = styled.ul`

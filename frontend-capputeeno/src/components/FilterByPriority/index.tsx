@@ -14,7 +14,7 @@ import { PriorityTypes } from "@/types/filters";
 
 export function FilterByPriority() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const { setActiveFilterByPriority } = useFilter();
+  const { setActiveFilterByPriority, activeFilterByPriority } = useFilter();
 
   const handleOpenFilter = () => {
     setIsFilterOpen(!isFilterOpen);
@@ -39,6 +39,7 @@ export function FilterByPriority() {
               <FilterOption
                 onClick={() => handleUpdateFilterPriority(item.type)}
                 key={item.type}
+                isActive={item.type === activeFilterByPriority}
               >
                 {item.label}
               </FilterOption>

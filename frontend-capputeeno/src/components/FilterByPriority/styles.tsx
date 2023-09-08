@@ -1,6 +1,10 @@
 import { theme } from "@/app/theme";
 import styled from "styled-components";
 
+interface FilterItemProps {
+  isActive: boolean;
+}
+
 export const FilterContainerPriority = styled.div`
   align-items: center;
   display: flex;
@@ -39,12 +43,13 @@ export const FilterWrapperOptions = styled.ul`
   z-index: 100;
 `;
 
-export const FilterOption = styled.li`
+export const FilterOption = styled.li<FilterItemProps>`
   cursor: pointer;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  color: ${theme.colors.textDark};
+  color: ${(props) =>
+    props.isActive ? theme.colors.orange : theme.colors.textDark};
   border-radius: 4px;
   padding: 4px 8px;
 

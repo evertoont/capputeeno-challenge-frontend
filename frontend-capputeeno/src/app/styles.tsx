@@ -1,7 +1,6 @@
 "use client";
 
 import styled from "styled-components";
-import { theme } from "./theme";
 
 export const PageWrapper = styled.main`
   display: flex;
@@ -12,7 +11,7 @@ export const PageWrapper = styled.main`
 export const DefaultPageLayout = styled.div`
   min-height: 100vh;
   padding: 34px 160px;
-  background-color: ${theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Divider = styled.span`
@@ -20,5 +19,5 @@ export const Divider = styled.span`
   height: 1px;
   margin: 8px auto;
   padding: 0px;
-  background: ${theme.colors.shapes};
+  background: ${({ theme }) => theme.colors.shapes};
 `;

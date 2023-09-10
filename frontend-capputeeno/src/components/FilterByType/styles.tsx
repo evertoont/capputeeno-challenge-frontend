@@ -1,4 +1,3 @@
-import { theme } from "@/app/theme";
 import styled from "styled-components";
 
 interface FilterItemProps {
@@ -16,7 +15,7 @@ export const FilterList = styled.ul`
 export const FilterItem = styled.li<FilterItemProps>`
   font-family: inherit;
   font-size: 16px;
-  color: ${theme.colors.textDark};
+  color: ${({ theme }) => theme.colors.textDark};
   font-weight: ${(props) => (props.isActive ? 600 : 400)};
   line-height: 22px;
   text-transform: uppercase;
@@ -25,5 +24,5 @@ export const FilterItem = styled.li<FilterItemProps>`
   cursor: pointer;
 
   border-bottom: ${(props) =>
-    props.isActive ? `4px solid ${theme.colors.orange}` : "none"};
+    props.isActive ? `4px solid ${props.theme.colors.orange}` : "none"};
 `;

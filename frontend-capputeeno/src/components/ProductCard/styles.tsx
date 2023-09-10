@@ -1,4 +1,3 @@
-import { theme } from "@/app/theme";
 import styled from "styled-components";
 
 export const ProductCardContainer = styled.div`
@@ -33,7 +32,7 @@ export const ProductCardName = styled.h3`
   font-style: normal;
   font-weight: 300;
   line-height: 150%;
-  color: ${theme.colors.secondTextDark};
+  color: ${({ theme }) => theme.colors.secondTextDark};
 `;
 
 export const ProductCardPrice = styled.p`
@@ -41,5 +40,5 @@ export const ProductCardPrice = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
-  color: ${theme.colors.shapesDark};
+  color: ${({ theme }) => theme.colors.shapesDark};
 `;

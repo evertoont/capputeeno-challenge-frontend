@@ -1,4 +1,3 @@
-import { theme } from "@/app/theme";
 import styled from "styled-components";
 
 interface FilterItemProps {
@@ -15,7 +14,7 @@ export const MainButtonSelected = styled.button`
   align-items: center;
   background-color: transparent;
   border: none;
-  color: ${theme.colors.textDark};
+  color: ${({ theme }) => theme.colors.textDark};
   cursor: pointer;
   display: flex;
   font-family: inherit;
@@ -29,7 +28,7 @@ export const MainButtonSelected = styled.button`
 export const FilterWrapperOptions = styled.ul`
   background-color: white;
   border-radius: 4px;
-  box-shadow: ${theme.shadows.shadowOne};
+  box-shadow: ${({ theme }) => theme.shadows.shadowOne};
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -49,11 +48,11 @@ export const FilterOption = styled.li<FilterItemProps>`
   line-height: 22px;
   font-weight: 400;
   color: ${(props) =>
-    props.isActive ? theme.colors.orange : theme.colors.textDark};
+    props.isActive ? props.theme.colors.orange : props.theme.colors.textDark};
   border-radius: 4px;
   padding: 4px 8px;
 
   &:hover {
-    background-color: ${theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 `;

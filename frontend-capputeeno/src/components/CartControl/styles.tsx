@@ -1,4 +1,3 @@
-import { theme } from "@/app/theme";
 import styled from "styled-components";
 
 export const CartCount = styled.span`
@@ -9,7 +8,7 @@ export const CartCount = styled.span`
   font-size: 10px;
   display: inline-block;
 
-  background-color: ${theme.colors.delete};
+  background-color: ${({ theme }) => theme.colors.delete};
   color: white;
 
   margin-left: -10px;

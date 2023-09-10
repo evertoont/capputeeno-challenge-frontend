@@ -1,4 +1,3 @@
-import { theme } from "@/app/theme";
 import { styled } from "styled-components";
 
 export const HeaderWrapper = styled.header`
@@ -10,7 +9,7 @@ export const HeaderWrapper = styled.header`
 
 export const Logo = styled.a`
   text-decoration: none;
-  color: ${theme.colors.logo};
+  color: ${({ theme }) => theme.colors.logo};
   font-weight: 400;
   font-size: 40px;
   line-height: 150%;

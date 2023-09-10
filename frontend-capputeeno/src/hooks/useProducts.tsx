@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { useFilter } from "./useFilter";
-import { fetchData } from "@/modules/resource";
+import { fetchDataAllProducts } from "@/modules/resource";
 import { mountQueryFilters } from "@/modules/queryFilters";
 import { useDeferredValue } from "react";
 
@@ -11,7 +11,7 @@ export function useProducts() {
   const query = mountQueryFilters(activeFilterByType, activeFilterByPriority);
 
   const { data, isLoading, isError } = useQuery({
-    queryFn: () => fetchData(query),
+    queryFn: () => fetchDataAllProducts(query),
     queryKey: ["products", activeFilterByType, activeFilterByPriority],
     staleTime: 1000 * 60 * 3,
   });

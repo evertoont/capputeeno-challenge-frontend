@@ -12,3 +12,9 @@ export interface ProductsFetchResponse {
     allProducts: Product[];
   };
 }
+
+export interface ProductFetchResponse {
+  data: {
+    Product: Product;
+  };
+}

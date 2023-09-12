@@ -7,20 +7,27 @@ import {
   ProductCardPrice,
 } from "./styles";
 import { formatPrice } from "@/utils/produtcs";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
+  id: string;
   image: string;
   name: string;
   price: number;
 }
 
 export function ProductCard(props: ProductCardProps) {
-  const { image, name, price } = props;
+  const { image, name, price, id } = props;
+  const router = useRouter();
 
   const priceFormatted = formatPrice(price);
 
+  const handleGoToProduct = () => {
+    router.push(`/product?id=${id}`);
+  };
+
   return (
-    <ProductCardContainer>
+    <ProductCardContainer onClick={handleGoToProduct}>
       <ProductCardImage src={image} alt={name} />
       <ProductCardInfo>
         <ProductCardName>{name}</ProductCardName>

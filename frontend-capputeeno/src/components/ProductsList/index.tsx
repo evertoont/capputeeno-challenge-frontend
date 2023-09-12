@@ -8,6 +8,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { theme } from "@/app/theme";
 import { ErrorState } from "../ErrorState";
+import { SkeletonProductList } from "../skeletonLoading/SkeletonProducList";
 
 export function ProductsList() {
   const { data: dataAllProducts, isLoading, isError } = useProducts();
@@ -22,23 +23,13 @@ export function ProductsList() {
         image={product.image_url}
         name={product.name}
         price={product.price_in_cents}
+        id={product.id}
       />
     ));
   };
 
   if (isLoading) {
-    return (
-      <SkeletonContainer>
-        <Skeleton
-          baseColor={theme.colors.shapeSkeletonBase}
-          count={30}
-          width={256}
-          height={300}
-          highlightColor={theme.colors.shapeSkeletonHighlight}
-          inline
-        />
-      </SkeletonContainer>
-    );
+    return <SkeletonProductList />;
   }
 
   if (isError) {

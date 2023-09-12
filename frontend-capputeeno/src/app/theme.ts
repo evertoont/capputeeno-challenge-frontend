@@ -10,6 +10,8 @@ export const colors = {
   shapesDark: "#09090A",
   shapeSkeletonBase: "#b4b4b4",
   shapeSkeletonHighlight: "#949494",
+  secondaryText: "#617480",
+  blueButton: "#115d8c",
 };
 
 export const shadows = {

@@ -9,7 +9,7 @@ export const PageWrapper = styled.main`
 `;
 
 export const DefaultPageLayout = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   padding: 34px 160px;
   background-color: ${({ theme }) => theme.colors.primary};
 `;

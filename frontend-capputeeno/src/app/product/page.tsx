@@ -23,6 +23,8 @@ import { formatPrice, translateCategory } from "@/utils/produtcs";
 import { ShopBagIcon } from "@/components/icons/shopbag";
 import { ErrorState } from "@/components/ErrorState";
 import { SkeletonLoadingProduct } from "@/components/skeletonLoading/SkeletonLoadingProduct";
+import { useLocalStorage } from "usehooks-ts";
+import { ProductCart } from "@/types/produtcs";
 
 interface ProductPageParams {
   id: string;
@@ -31,6 +33,10 @@ interface ProductPageParams {
 export default function ProductPage(params: PageProps<ProductPageParams>) {
   const { id: productId } = params.searchParams;
   const { data, isLoading, isError } = useProduct(productId);
+  const [productCartList, setProductCartList] = useLocalStorage<ProductCart[]>(
+    "product-cart",
+    []
+  );
 
   if (isLoading) {
     return <SkeletonLoadingProduct />;
@@ -39,6 +45,23 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
   if (isError) {
     return <ErrorState>"Ops! Parece que algo deu errado."</ErrorState>;
   }
+
+  const handleAddToCart = () => {
+    if (!data) return;
+
+    const productExistIndex = productCartList.findIndex(
+      (item) => item.id === productId
+    );
+
+    if (productExistIndex !== -1) {
+      const updatedCart = [...productCartList];
+
+      updatedCart[productExistIndex].quantity += 1;
+      setProductCartList(updatedCart);
+    } else {
+      setProductCartList([...productCartList, { ...data, quantity: 1 }]);
+    }
+  };
 
   return (
     <DefaultPageLayout>
@@ -67,7 +90,7 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
               </ProductDescriptionContainer>
             </ProductInfo>
 
-            <ProductAddToCart>
+            <ProductAddToCart onClick={handleAddToCart}>
               <ShopBagIcon />
               Adicionar ao carrinho
             </ProductAddToCart>

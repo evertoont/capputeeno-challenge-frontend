@@ -18,3 +18,7 @@ export interface ProductFetchResponse {
     Product: Product;
   };
 }
+
+export interface ProductCart extends Product {
+  quantity: number;
+}

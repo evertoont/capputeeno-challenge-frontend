@@ -4,6 +4,7 @@ import { fetchDataProduct } from "@/modules/resource";
 export function useProduct(productId: string) {
   const query = `query {
       Product(id: "${productId}") {
+        id
         name
         description
         image_url

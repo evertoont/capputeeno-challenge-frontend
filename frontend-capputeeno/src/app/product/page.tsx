@@ -7,7 +7,7 @@ import { BackButton } from "@/components/BackButton";
 import {
   Container,
   ProductAddToCart,
-  ProductCarrie,
+  ProductDeliveryFee,
   ProductCategory,
   ProductDescriptionContainer,
   ProductDescriptionText,
@@ -78,10 +78,10 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
               <ProductPrice>
                 {formatPrice(data?.price_in_cents ?? 0)}
               </ProductPrice>
-              <ProductCarrie>
+              <ProductDeliveryFee>
                 *Frete de R$40,00 para todo o Brasil. Grátis para compras acima
                 de R$900,00.
-              </ProductCarrie>
+              </ProductDeliveryFee>
               <ProductDescriptionContainer>
                 <ProductDescriptionTitle>Descrição</ProductDescriptionTitle>
                 <ProductDescriptionText>

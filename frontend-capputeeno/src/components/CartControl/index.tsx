@@ -3,15 +3,14 @@
 import { useRouter } from "next/navigation";
 import { CartIcon } from "../icons/cart";
 import { CartCount, CartContainer } from "./styles";
-import { useLocalStorage } from "usehooks-ts";
+import { useReadLocalStorage } from "usehooks-ts";
 import { ProductCart } from "@/types/produtcs";
 
 export function CartControl() {
   const router = useRouter();
-  const [productCartList, _] = useLocalStorage<ProductCart[]>(
-    "product-cart",
-    []
-  );
+  const productCartList = useReadLocalStorage<ProductCart[]>("product-cart");
+
+  const existProductCart = productCartList && productCartList.length > 0;
 
   const handleClickCart = () => {
     router.push("/cart");
@@ -20,9 +19,7 @@ export function CartControl() {
   return (
     <CartContainer onClick={handleClickCart}>
       <CartIcon />
-      {productCartList.length > 0 && (
-        <CartCount>{productCartList.length}</CartCount>
-      )}
+      {existProductCart && <CartCount>{productCartList?.length}</CartCount>}
     </CartContainer>
   );
 }

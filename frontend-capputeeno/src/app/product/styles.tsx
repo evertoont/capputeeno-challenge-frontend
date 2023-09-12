@@ -58,7 +58,7 @@ export const ProductPrice = styled.span`
   margin-top: 4px;
 `;
 
-export const ProductCarrie = styled.p`
+export const ProductDeliveryFee = styled.p`
   font-weight: 400;
   font-size: 12px;
   margin-top: 24px;

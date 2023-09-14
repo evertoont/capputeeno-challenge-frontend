@@ -2,15 +2,11 @@ import { useRouter } from "next/navigation";
 import { ButtonText, ContainerButton } from "./styles";
 import { BackIcon } from "../icons/back";
 
-interface BackButtonProps {
-  navigateTo: string;
-}
-export function BackButton(props: BackButtonProps) {
-  const { navigateTo } = props;
+export function BackButton() {
   const router = useRouter();
 
   const handleBackButton = () => {
-    router.push(navigateTo);
+    router.back();
   };
 
   return (

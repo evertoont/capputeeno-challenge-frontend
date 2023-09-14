@@ -24,7 +24,7 @@ import { ShopBagIcon } from "@/components/icons/shopbag";
 import { ErrorState } from "@/components/ErrorState";
 import { SkeletonLoadingProduct } from "@/components/skeletonLoading/SkeletonLoadingProduct";
 import { useLocalStorage } from "usehooks-ts";
-import { ProductCart } from "@/types/produtcs";
+import { ProductInCart } from "@/types/products";
 
 interface ProductPageParams {
   id: string;
@@ -33,10 +33,9 @@ interface ProductPageParams {
 export default function ProductPage(params: PageProps<ProductPageParams>) {
   const { id: productId } = params.searchParams;
   const { data, isLoading, isError } = useProduct(productId);
-  const [productCartList, setProductCartList] = useLocalStorage<ProductCart[]>(
-    "product-cart",
-    []
-  );
+  const [productCartList, setProductCartList] = useLocalStorage<
+    ProductInCart[]
+  >("product-cart", []);
 
   if (isLoading) {
     return <SkeletonLoadingProduct />;
@@ -66,7 +65,7 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
   return (
     <DefaultPageLayout>
       <Container>
-        <BackButton navigateTo="/" />
+        <BackButton />
         <ProductSection>
           <ProductImage src={data?.image_url} />
           <ProductInfoContainer>

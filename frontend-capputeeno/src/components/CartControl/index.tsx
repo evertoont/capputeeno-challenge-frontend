@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 import { CartIcon } from "../icons/cart";
 import { CartCount, CartContainer } from "./styles";
 import { useReadLocalStorage } from "usehooks-ts";
-import { ProductCart } from "@/types/produtcs";
+import { ProductInCart } from "@/types/products";
 
 export function CartControl() {
   const router = useRouter();
-  const productCartList = useReadLocalStorage<ProductCart[]>("product-cart");
+  const productCartList = useReadLocalStorage<ProductInCart[]>("product-cart");
 
   const existProductCart = productCartList && productCartList.length > 0;
 

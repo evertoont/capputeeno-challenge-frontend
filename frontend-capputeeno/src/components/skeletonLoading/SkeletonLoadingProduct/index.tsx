@@ -8,7 +8,7 @@ export function SkeletonLoadingProduct() {
   return (
     <DefaultPageLayout>
       <Container>
-        <BackButton navigateTo="/" />
+        <BackButton />
         <SkeletonContainer>
           <Skeleton
             baseColor={theme.colors.shapeSkeletonBase}

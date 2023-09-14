@@ -2,7 +2,7 @@ import {
   Product,
   ProductFetchResponse,
   ProductsFetchResponse,
-} from "@/types/produtcs";
+} from "@/types/products";
 import axios from "axios";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;

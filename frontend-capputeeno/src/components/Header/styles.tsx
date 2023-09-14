@@ -7,12 +7,15 @@ export const HeaderWrapper = styled.header`
   padding: 20px 170px;
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.button`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.logo};
   font-weight: 400;
   font-size: 40px;
   line-height: 150%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 `;
 
 export const InputContainer = styled.div`

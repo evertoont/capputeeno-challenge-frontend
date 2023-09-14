@@ -13,6 +13,7 @@ import { SearchIcon } from "../icons/search";
 import { CartControl } from "../CartControl";
 import { useFilter } from "@/hooks/useFilter";
 import { CloseIcon } from "../icons/close";
+import { useRouter } from "next/navigation";
 
 const sairaStencil = Saira_Stencil_One({
   weight: ["400"],
@@ -21,6 +22,7 @@ const sairaStencil = Saira_Stencil_One({
 
 export function Header() {
   const { searchProduct, setSearchProduct } = useFilter();
+  const router = useRouter();
 
   const handleChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchProduct(event.target.value);
@@ -30,9 +32,13 @@ export function Header() {
     setSearchProduct("");
   };
 
+  const handleNavigateToHome = () => {
+    router.push("/");
+  };
+
   return (
     <HeaderWrapper>
-      <Logo className={sairaStencil.className} href="/">
+      <Logo className={sairaStencil.className} onClick={handleNavigateToHome}>
         Capputeeno
       </Logo>
 

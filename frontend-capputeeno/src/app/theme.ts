@@ -12,6 +12,8 @@ export const colors = {
   shapeSkeletonHighlight: "#949494",
   secondaryText: "#617480",
   blueButton: "#115d8c",
+  borderColor: "#A8A8B3",
+  successColor: "#51B853",
 };
 
 export const shadows = {

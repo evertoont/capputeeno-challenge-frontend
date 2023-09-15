@@ -67,3 +67,16 @@ export const ProductInfoPrice = styled.span`
   font-weight: 600;
   line-height: 150%;
 `;
+
+export const SelectQuantity = styled.select`
+  padding: 8px;
+  max-width: 65px;
+  width: 100%;
+  border: 1.5px solid ${({ theme }) => theme.colors.borderColor};
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.textDark};
+  font-weight: 400;
+  font-size: 16px;
+  outline: none;
+`;

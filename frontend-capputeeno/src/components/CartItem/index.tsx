@@ -9,6 +9,7 @@ import {
   ProductInfoHeader,
   ProductInfoPrice,
   ProductInfoTitle,
+  SelectQuantity,
 } from "./styles";
 import { DeleteIcon } from "../icons/delete";
 import { formatPrice } from "@/utils/produtcs";
@@ -20,6 +21,12 @@ interface CartItemProps {
 }
 export function CartItem(props: CartItemProps) {
   const { productInfo, onRemoveProduct, onUpdateQuantity } = props;
+
+  const handleUpdateQuantity = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    onUpdateQuantity(productInfo.id, Number(event.target.value));
+  };
 
   return (
     <CartItemContainer>
@@ -37,7 +44,16 @@ export function CartItem(props: CartItemProps) {
         </ProductInfoDescription>
 
         <ProductInfoFooter>
-          <p>Select</p>
+          <SelectQuantity
+            value={productInfo.quantity}
+            onChange={handleUpdateQuantity}
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+          </SelectQuantity>
           <ProductInfoPrice>
             {formatPrice(productInfo.price_in_cents)}
           </ProductInfoPrice>

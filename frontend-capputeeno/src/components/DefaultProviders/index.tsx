@@ -2,6 +2,7 @@
 
 import { theme } from "@/app/theme";
 import { FilterContextProvider } from "@/context/filterContext";
+import { ProductSettingsContextProvider } from "@/context/productSettingsContext";
 import { ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider } from "styled-components";
@@ -15,7 +16,9 @@ export function DefaultProviders(props: DefaultProvidersProps) {
   return (
     <QueryClientProvider client={client}>
       <FilterContextProvider>
-        <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+        <ProductSettingsContextProvider>
+          <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+        </ProductSettingsContextProvider>
       </FilterContextProvider>
     </QueryClientProvider>
   );

@@ -18,3 +18,22 @@ export const translateCategory = (category: string) => {
 
   return categoryMap[category];
 };
+
+export const AlternativeLinks = [
+  {
+    label: "Ajuda",
+    link: "#",
+  },
+  {
+    label: "Reembolsos",
+    link: "#",
+  },
+  {
+    label: "Entregas e frete",
+    link: "#",
+  },
+  {
+    label: "Trocas e devoluções",
+    link: "#",
+  },
+];

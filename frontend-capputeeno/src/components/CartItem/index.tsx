@@ -13,6 +13,7 @@ import {
 } from "./styles";
 import { DeleteIcon } from "../icons/delete";
 import { formatPrice } from "@/utils/produtcs";
+import { useProductSettings } from "@/hooks/useProductSettings";
 
 interface CartItemProps {
   productInfo: ProductInCart;
@@ -21,6 +22,7 @@ interface CartItemProps {
 }
 export function CartItem(props: CartItemProps) {
   const { productInfo, onRemoveProduct, onUpdateQuantity } = props;
+  const { maxQuantityItems } = useProductSettings();
 
   const handleUpdateQuantity = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -48,11 +50,11 @@ export function CartItem(props: CartItemProps) {
             value={productInfo.quantity}
             onChange={handleUpdateQuantity}
           >
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
+            {Array.from({ length: maxQuantityItems }, (_, index) => (
+              <option key={index} value={index + 1}>
+                {index + 1}
+              </option>
+            ))}
           </SelectQuantity>
           <ProductInfoPrice>
             {formatPrice(productInfo.price_in_cents)}

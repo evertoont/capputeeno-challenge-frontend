@@ -6,50 +6,45 @@ import { DefaultPageLayout } from "@/app/styles";
 
 export function SkeletonLoadingProduct() {
   return (
-    <DefaultPageLayout>
-      <Container>
-        <BackButton />
-        <SkeletonContainer>
+    <SkeletonContainer>
+      <Skeleton
+        baseColor={theme.colors.shapeSkeletonBase}
+        width={640}
+        height={580}
+        highlightColor={theme.colors.shapeSkeletonHighlight}
+      />
+
+      <SkeletonContainerInfo>
+        <div>
           <Skeleton
             baseColor={theme.colors.shapeSkeletonBase}
-            width={640}
-            height={580}
+            width={100}
+            height={20}
             highlightColor={theme.colors.shapeSkeletonHighlight}
           />
 
-          <SkeletonContainerInfo>
-            <div>
-              <Skeleton
-                baseColor={theme.colors.shapeSkeletonBase}
-                width={100}
-                height={20}
-                highlightColor={theme.colors.shapeSkeletonHighlight}
-              />
+          <Skeleton
+            baseColor={theme.colors.shapeSkeletonBase}
+            width={448}
+            height={48}
+            highlightColor={theme.colors.shapeSkeletonHighlight}
+          />
+        </div>
 
-              <Skeleton
-                baseColor={theme.colors.shapeSkeletonBase}
-                width={448}
-                height={48}
-                highlightColor={theme.colors.shapeSkeletonHighlight}
-              />
-            </div>
+        <Skeleton
+          baseColor={theme.colors.shapeSkeletonBase}
+          width={448}
+          height={80}
+          highlightColor={theme.colors.shapeSkeletonHighlight}
+        />
 
-            <Skeleton
-              baseColor={theme.colors.shapeSkeletonBase}
-              width={448}
-              height={80}
-              highlightColor={theme.colors.shapeSkeletonHighlight}
-            />
-
-            <Skeleton
-              baseColor={theme.colors.shapeSkeletonBase}
-              width={448}
-              height={44}
-              highlightColor={theme.colors.shapeSkeletonHighlight}
-            />
-          </SkeletonContainerInfo>
-        </SkeletonContainer>
-      </Container>
-    </DefaultPageLayout>
+        <Skeleton
+          baseColor={theme.colors.shapeSkeletonBase}
+          width={448}
+          height={44}
+          highlightColor={theme.colors.shapeSkeletonHighlight}
+        />
+      </SkeletonContainerInfo>
+    </SkeletonContainer>
   );
 }

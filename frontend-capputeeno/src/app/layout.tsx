@@ -1,8 +1,11 @@
-import { Header } from "@/components/Header";
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
+
 import type { Metadata } from "next";
-import { Saira } from "next/font/google";
 import { DefaultProviders } from "@/components/DefaultProviders";
+import { Header } from "@/components/Header";
+import { Saira } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 
 const saira = Saira({
   weight: ["300", "400", "500", "600"],
@@ -22,6 +25,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <DefaultProviders>
           <Header />
           {children}

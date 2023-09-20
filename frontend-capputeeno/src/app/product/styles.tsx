@@ -13,19 +13,35 @@ export const ProductSection = styled.section`
   width: 100%;
   margin-top: 32px;
   gap: 32px;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    flex-direction: row;
+    align-items: normal;
+  }
 `;
 
 export const ProductImage = styled.img`
   max-width: 640px;
-  height: 580px;
-  width: 50%;
+  height: 300px;
+  width: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 50%;
+    height: 580px;
+  }
 `;
 
 export const ProductInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30%;
+  width: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 30%;
+  }
 `;
 
 export const ProductInfo = styled.div`
@@ -67,6 +83,11 @@ export const ProductDeliveryFee = styled.p`
 
 export const ProductDescriptionContainer = styled.div`
   margin-top: 58px;
+  min-height: 160px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    min-height: 0;
+  }
 `;
 
 export const ProductDescriptionTitle = styled.h3`
@@ -90,7 +111,7 @@ export const ProductAddToCart = styled.button`
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   height: 44px;
   line-height: 150%;
@@ -98,10 +119,17 @@ export const ProductAddToCart = styled.button`
   padding: 10px 0;
   text-align: center;
   text-transform: uppercase;
-  width: 448px;
+  max-width: 448px;
+  padding: 10px;
+
+  margin-top: 32px;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    margin-top: 0;
+  }
 `;

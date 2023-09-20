@@ -2,9 +2,16 @@ import { styled } from "styled-components";
 
 export const HeaderWrapper = styled.header`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 170px;
+  padding: 20px 24px;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: 20px 170px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const Logo = styled.button`
@@ -20,7 +27,11 @@ export const Logo = styled.button`
 
 export const InputContainer = styled.div`
   position: relative;
-  width: 350px;
+  width: 280px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 350px;
+  }
 
   svg {
     position: absolute;

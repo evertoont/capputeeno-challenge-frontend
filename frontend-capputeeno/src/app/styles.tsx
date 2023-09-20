@@ -10,8 +10,12 @@ export const PageWrapper = styled.main`
 
 export const DefaultPageLayout = styled.div`
   min-height: calc(100vh - 100px);
-  padding: 34px 160px;
+  padding: 34px 50px;
   background-color: ${({ theme }) => theme.colors.primary};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    padding: 34px 160px;
+  }
 `;
 
 export const Divider = styled.span`

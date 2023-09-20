@@ -20,7 +20,14 @@ export const shadows = {
   shadowOne: "0px 4px 12px 0px rgba(0, 0, 0, 0.10);",
 };
 
+export const breakpoints = {
+  mobile: "425px",
+  tablet: "768px",
+  desktop: "1000px",
+};
+
 export const theme = {
   colors,
   shadows,
+  breakpoints,
 };

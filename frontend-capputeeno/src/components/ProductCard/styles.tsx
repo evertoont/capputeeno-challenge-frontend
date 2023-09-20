@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProductCardContainer = styled.div`
   display: flex;
-  width: 256px;
+  width: 200px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -11,12 +11,21 @@ export const ProductCardContainer = styled.div`
 
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 256px;
+  }
 `;
 
 export const ProductCardImage = styled.img`
-  width: 256px;
-  height: 300px;
+  width: 200px;
+  height: 250px;
   border-radius: 8px 8px 0px 0px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    width: 256px;
+    height: 300px;
+  }
 `;
 
 export const ProductCardInfo = styled.div`

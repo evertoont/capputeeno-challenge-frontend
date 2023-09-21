@@ -2,17 +2,32 @@ import styled from "styled-components";
 
 export const CartItemContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 8px;
   background-color: white;
-  /* width: 736px; */
-  height: 210px;
+  flex-direction: column;
+  min-height: 450px;
+  justify-content: space-between;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 210px;
+    flex-direction: row;
+    align-items: center;
+    min-height: 0;
+    justify-content: initial;
+  }
 `;
 
 export const ProductImage = styled.img`
   max-height: 100%;
-  width: 256px;
-  border-radius: 8px 0 0 8px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px 8px 0 0;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    border-radius: 8px 0 0 8px;
+    width: 256px;
+  }
 `;
 
 export const ProductInfoContainer = styled.div`
@@ -22,6 +37,11 @@ export const ProductInfoContainer = styled.div`
   padding: 16px 31px;
   height: 100%;
   width: 100%;
+  gap: 16px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    gap: initial;
+  }
 `;
 
 export const ProductInfoHeader = styled.div`

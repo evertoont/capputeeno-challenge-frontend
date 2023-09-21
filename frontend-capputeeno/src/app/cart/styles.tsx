@@ -48,6 +48,12 @@ export const ContainerCart = styled.div`
   display: flex;
   gap: 32px;
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktopLarge}) {
+    flex-direction: row;
+  }
 `;
 
 export const CartResultContainer = styled.div`
@@ -55,9 +61,13 @@ export const CartResultContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 700px;
-  min-width: 352px;
+  min-width: 300px;
   background-color: white;
   padding: 16px 24px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    min-width: 352px;
+  }
 `;
 
 export const CartResultContainerInfos = styled.div`

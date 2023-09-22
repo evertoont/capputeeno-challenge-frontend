@@ -3,7 +3,9 @@ import { getCategoryByType, getPriorityByType } from "@/utils/filters";
 
 export const mountQueryFilters = (
   categoryType: FilterTypes,
-  priorityType: PriorityTypes
+  priorityType: PriorityTypes,
+  page: number,
+  perPage: number
 ): string => {
   const categoryFilter = getCategoryByType(categoryType);
   const priorityFilter = getPriorityByType(priorityType);
@@ -18,22 +20,28 @@ export const mountQueryFilters = (
 
   if (isAllAndPopularity) {
     return `query {
-      allProducts (sortField: "sales", sortOrder: "DSC") {
+      allProducts (sortField: "sales", sortOrder: "DSC" page: ${page} perPage: ${perPage}) {
         id
         name
         price_in_cents
         image_url
       }
+      _allProductsMeta {
+        count
+      }
     }`;
   }
 
   return `query {
-    allProducts(${filterCategoryValid} sortField: "${priorityFilter.sortField}", sortOrder: "${priorityFilter.sortOrder}") {
+    allProducts(${filterCategoryValid} sortField: "${priorityFilter.sortField}" sortOrder: "${priorityFilter.sortOrder}" page: ${page} perPage: ${perPage}) {
       id
       name
       price_in_cents
       image_url
       category
+    }
+    _allProductsMeta {
+      count
     }
   }`;
 };

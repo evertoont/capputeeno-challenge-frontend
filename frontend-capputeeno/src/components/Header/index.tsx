@@ -14,6 +14,7 @@ import { CartControl } from "../CartControl";
 import { useFilter } from "@/hooks/useFilter";
 import { CloseIcon } from "../icons/close";
 import { useRouter } from "next/navigation";
+import { useProducts } from "@/hooks/useProducts";
 
 const sairaStencil = Saira_Stencil_One({
   weight: ["400"],
@@ -21,14 +22,35 @@ const sairaStencil = Saira_Stencil_One({
 });
 
 export function Header() {
-  const { searchProduct, setSearchProduct } = useFilter();
+  const {
+    searchProduct,
+    setSearchProduct,
+    setPage,
+    setPerPage,
+    activeFilterByType,
+  } = useFilter();
+  const { totalProducts } = useProducts();
   const router = useRouter();
 
   const handleChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length > 0 && totalProducts) {
+      setPage(0);
+      setPerPage(totalProducts);
+    }
+
+    if (event.target.value === "" && !activeFilterByType) {
+      setPage(0);
+      setPerPage(10);
+    }
+
     setSearchProduct(event.target.value);
   };
 
   const handleClearSearch = () => {
+    if (!activeFilterByType) {
+      setPage(0);
+      setPerPage(10);
+    }
     setSearchProduct("");
   };
 

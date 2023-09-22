@@ -14,6 +14,10 @@ export const FilterContext = createContext({
   setActiveFilterByPriority: (filter: PriorityTypes) => {},
   setActiveFilterByType: (filter: FilterTypes) => {},
   setSearchProduct: (search: string) => {},
+  page: 0,
+  setPage: (page: number) => {},
+  perPage: 10,
+  setPerPage: (perPage: number) => {},
 });
 
 export function FilterContextProvider({ children }: FilterContextProps) {
@@ -22,6 +26,8 @@ export function FilterContextProvider({ children }: FilterContextProps) {
     PriorityTypes.POPULARITY
   );
   const [searchProduct, setSearchProduct] = useState("");
+  const [page, setPage] = useState(0);
+  const [perPage, setPerPage] = useState(10);
 
   return (
     <FilterContext.Provider
@@ -32,6 +38,10 @@ export function FilterContextProvider({ children }: FilterContextProps) {
         setActiveFilterByPriority,
         searchProduct,
         setSearchProduct,
+        page,
+        setPage,
+        perPage,
+        setPerPage,
       }}
     >
       {children}

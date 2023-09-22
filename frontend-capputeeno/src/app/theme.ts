@@ -8,6 +8,7 @@ export const colors = {
   shapes: "#DCE2E6",
   secondTextDark: "#41414D",
   shapesDark: "#09090A",
+  shapesLight: "#E9E9F0",
   shapeSkeletonBase: "#b4b4b4",
   shapeSkeletonHighlight: "#949494",
   secondaryText: "#617480",

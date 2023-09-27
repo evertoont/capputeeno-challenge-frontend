@@ -12,7 +12,7 @@ import {
   SelectQuantity,
 } from "./styles";
 import { DeleteIcon } from "../icons/delete";
-import { formatPrice } from "@/utils/produtcs";
+import { formatPrice } from "@/utils/products";
 import { useProductSettings } from "@/hooks/useProductSettings";
 
 interface CartItemProps {
@@ -31,7 +31,7 @@ export function CartItem(props: CartItemProps) {
   };
 
   return (
-    <CartItemContainer>
+    <CartItemContainer data-testid="CartItem">
       <ProductImage src={productInfo.image_url} />
       <ProductInfoContainer>
         <ProductInfoHeader>

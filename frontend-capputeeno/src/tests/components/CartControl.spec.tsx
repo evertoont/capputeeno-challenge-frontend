@@ -61,6 +61,8 @@ describe("CartControl", () => {
 
     const button = getByRole("button");
 
+    expect(button).toBeInTheDocument();
+
     fireEvent.click(button, "click");
 
     expect(mockFunction).toHaveBeenCalled();

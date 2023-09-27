@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterByPriority should render FilterByPriority component 1`] = `
+<div
+  class="sc-bcPKhP gckuTJ"
+  data-testid="FilterByPriority"
+>
+  <button
+    class="sc-grXZZQ jFNDq"
+  >
+    Organizar por
+    <svg
+      fill="none"
+      height="6"
+      viewBox="0 0 10 6"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 1L5 5L9 1"
+        stroke="#737380"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+  </button>
+</div>
+`;

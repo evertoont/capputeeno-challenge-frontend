@@ -29,7 +29,7 @@ describe("CartItem", () => {
       </ThemeProvider>
     );
 
-    expect(getByTestId("CartItem")).toBeInTheDocument();
+    expect(getByTestId("CartItem")).toMatchSnapshot();
   });
 
   it("should call onUpdateQuantity when select quantity", () => {

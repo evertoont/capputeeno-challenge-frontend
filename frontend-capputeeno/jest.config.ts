@@ -95,6 +95,8 @@ const config: Config = {
     "^@/hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "^@/components/(.*)$": "<rootDir>/src/components/$1",
     "^@/app/(.*)$": "<rootDir>/src/app/$1",
+    "^@/types/(.*)$": "<rootDir>/src/types/$1",
+    "^@/context/(.*)$": "<rootDir>/src/context/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

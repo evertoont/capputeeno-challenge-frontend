@@ -26,7 +26,7 @@ export function FilterByPriority() {
   };
 
   return (
-    <FilterContainerPriority>
+    <FilterContainerPriority data-testid="FilterByPriority">
       <MainButtonSelected onClick={handleOpenFilter}>
         Organizar por
         <ArrowIcon />

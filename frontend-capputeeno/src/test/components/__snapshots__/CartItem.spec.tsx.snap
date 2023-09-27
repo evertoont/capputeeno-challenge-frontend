@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem should render CartItem correctly 1`] = `
+<div
+  class="sc-bcPKhP goIgTE"
+  data-testid="CartItem"
+>
+  <img
+    class="sc-grXZZQ bVmYJu"
+    src="https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-04.jpg"
+  />
+  <div
+    class="sc-dkjKgF dJrBAg"
+  >
+    <div
+      class="sc-hLclGa eunyYl"
+    >
+      <h4
+        class="sc-eDnVMP jOpDHu"
+      >
+        Camiseta Ramones
+      </h4>
+      <button
+        class="sc-jSwlEQ cQZDuO"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M16.1378 21H7.85782C6.81082 21 5.94082 20.192 5.86282 19.147L4.96582 7H18.9998L18.1328 19.142C18.0578 20.189 17.1868 21 16.1378 21V21Z"
+            fill-rule="evenodd"
+            stroke="#DE3838"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M12 11V17"
+            stroke="#DE3838"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M4 7H20"
+            stroke="#DE3838"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M17 7L15.987 4.298C15.694 3.517 14.948 3 14.114 3H9.886C9.052 3 8.306 3.517 8.013 4.298L7 7"
+            stroke="#DE3838"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M15.4298 11L14.9998 17"
+            stroke="#DE3838"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+          <path
+            d="M8.57016 11L9.00016 17"
+            stroke="#DE3838"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          />
+        </svg>
+      </button>
+    </div>
+    <p
+      class="sc-gKHVLF eaMKhs"
+    >
+      Aut dolor eum aspernatur maxime in suscipit perspiciatis aut iusto. Eum odio ducimus nam quos quia esse quibusdam totam iure. Voluptates est sit laboriosam. Et unde illum aliquid debitis quia fugit est nisi provident.
+    </p>
+    <div
+      class="sc-iBAaJG blTQXt"
+    >
+      <select
+        class="sc-pqitP kqyUUr"
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="9"
+        >
+          9
+        </option>
+        <option
+          value="10"
+        >
+          10
+        </option>
+      </select>
+      <span
+        class="sc-ftLKQv cOBslt"
+      >
+        R$ 10,00
+      </span>
+    </div>
+  </div>
+</div>
+`;

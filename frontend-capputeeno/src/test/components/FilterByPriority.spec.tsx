@@ -1,14 +1,13 @@
-import { theme } from "@/app/theme";
+import { DefaultProviders } from "@/components/DefaultProviders";
 import { FilterByPriority } from "@/components/FilterByPriority";
 import { fireEvent, render } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
 
 describe("FilterByPriority", () => {
   it("should render FilterByPriority component", () => {
     const { getByTestId } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <FilterByPriority />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     expect(getByTestId("FilterByPriority")).toMatchSnapshot();
@@ -16,9 +15,9 @@ describe("FilterByPriority", () => {
 
   it("should render FilterByPriority component with options", () => {
     const { getByText } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <FilterByPriority />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     const filterByPriority = getByText("Organizar por");
@@ -33,9 +32,9 @@ describe("FilterByPriority", () => {
 
   it("should render FilterByPriority component with options and click in one of them", () => {
     const { getByText, queryByText } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <FilterByPriority />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     const filterByPriority = getByText("Organizar por");

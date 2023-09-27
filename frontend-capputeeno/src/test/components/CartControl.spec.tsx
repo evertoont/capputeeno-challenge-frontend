@@ -1,7 +1,6 @@
-import { theme } from "@/app/theme";
 import { CartControl } from "@/components/CartControl";
+import { DefaultProviders } from "@/components/DefaultProviders";
 import { fireEvent, render } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
 
 const mockFunction = jest.fn();
 
@@ -34,9 +33,9 @@ jest.mock("usehooks-ts", () => {
 describe("CartControl", () => {
   it("should render CartControl correctly", () => {
     const { getByRole } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <CartControl />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     expect(getByRole("button")).toBeInTheDocument();
@@ -44,9 +43,9 @@ describe("CartControl", () => {
 
   it("should render CartControl with count", () => {
     const { getByText } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <CartControl />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     expect(getByText("1")).toBeInTheDocument();
@@ -54,9 +53,9 @@ describe("CartControl", () => {
 
   it("should call navigation push function", () => {
     const { getByRole, debug } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <CartControl />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     const button = getByRole("button");

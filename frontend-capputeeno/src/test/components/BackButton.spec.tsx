@@ -1,7 +1,6 @@
-import { ThemeProvider } from "styled-components";
 import { fireEvent, render } from "@testing-library/react";
 import { BackButton } from "@/components/BackButton";
-import { theme } from "@/app/theme";
+import { DefaultProviders } from "@/components/DefaultProviders";
 
 const mockFunction = jest.fn();
 
@@ -18,9 +17,9 @@ jest.mock("next/navigation", () => {
 describe("BackButton", () => {
   it("should render backButton correctly", () => {
     const { getByText, getByRole } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <BackButton />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     expect(getByRole("button")).toBeInTheDocument();
@@ -29,9 +28,9 @@ describe("BackButton", () => {
 
   it("should call navigation back function", () => {
     const { getByRole } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <BackButton />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     const button = getByRole("button");

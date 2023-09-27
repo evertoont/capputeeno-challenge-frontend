@@ -1,8 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import { productInCartMock } from "../mocks/products";
-import { ThemeProvider } from "styled-components";
 import { CartItem } from "@/components/CartItem";
-import { theme } from "@/app/theme";
+import { DefaultProviders } from "@/components/DefaultProviders";
 
 const mockUpdateQuantity = jest.fn();
 const mockRemoveProduct = jest.fn();
@@ -20,13 +19,13 @@ jest.mock("@/hooks/useProductSettings", () => ({
 describe("CartItem", () => {
   it("should render CartItem correctly", () => {
     const { getByTestId } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <CartItem
           onRemoveProduct={mockRemoveProduct}
           onUpdateQuantity={mockUpdateQuantity}
           productInfo={productInCartMock}
         />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     expect(getByTestId("CartItem")).toMatchSnapshot();
@@ -34,13 +33,13 @@ describe("CartItem", () => {
 
   it("should call onUpdateQuantity when select quantity", () => {
     const { getByRole, debug } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <CartItem
           onRemoveProduct={mockRemoveProduct}
           onUpdateQuantity={mockUpdateQuantity}
           productInfo={productInCartMock}
         />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     const selectQuantity = getByRole("combobox");
@@ -54,13 +53,13 @@ describe("CartItem", () => {
 
   it("should call onRemoveProduct when click on delete button", () => {
     const { getByRole } = render(
-      <ThemeProvider theme={theme}>
+      <DefaultProviders>
         <CartItem
           onRemoveProduct={mockRemoveProduct}
           onUpdateQuantity={mockUpdateQuantity}
           productInfo={productInCartMock}
         />
-      </ThemeProvider>
+      </DefaultProviders>
     );
 
     const deleteButton = getByRole("button");

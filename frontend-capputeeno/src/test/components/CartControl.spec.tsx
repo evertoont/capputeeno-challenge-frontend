@@ -1,7 +1,7 @@
+import { theme } from "@/app/theme";
+import { CartControl } from "@/components/CartControl";
 import { fireEvent, render } from "@testing-library/react";
-import { CartControl } from "../../components/CartControl";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../app/theme";
 
 const mockFunction = jest.fn();
 

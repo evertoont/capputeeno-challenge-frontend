@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
-import { BackButton } from "../../components/BackButton";
 import { fireEvent, render } from "@testing-library/react";
-import { theme } from "../../app/theme";
+import { BackButton } from "@/components/BackButton";
+import { theme } from "@/app/theme";
 
 const mockFunction = jest.fn();
 

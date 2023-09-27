@@ -1,5 +1,5 @@
+import { ErrorState } from "@/components/ErrorState";
 import { render } from "@testing-library/react";
-import { ErrorState } from "../../components/ErrorState";
 
 describe("ErrorState", () => {
   it("should render ErrorState correctly", () => {

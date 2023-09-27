@@ -1,8 +1,8 @@
 import { fireEvent, render } from "@testing-library/react";
-import { CartItem } from "../../components/CartItem";
 import { productInCartMock } from "../mocks/products";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../app/theme";
+import { CartItem } from "@/components/CartItem";
+import { theme } from "@/app/theme";
 
 const mockUpdateQuantity = jest.fn();
 const mockRemoveProduct = jest.fn();

@@ -6,7 +6,7 @@ import {
   ProductCardName,
   ProductCardPrice,
 } from "./styles";
-import { formatPrice } from "@/utils/produtcs";
+import { formatPrice } from "@/utils/products";
 import { useRouter } from "next/navigation";
 
 interface ProductCardProps {

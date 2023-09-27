@@ -6,7 +6,7 @@ import { useLocalStorage } from "usehooks-ts";
 import { BackButton } from "@/components/BackButton";
 import { CartItem } from "@/components/CartItem";
 import { DefaultPageLayout, Divider } from "../styles";
-import { AlternativeLinks, formatPrice } from "@/utils/produtcs";
+import { AlternativeLinks, formatPrice } from "@/utils/products";
 import { EmptyState } from "@/components/EmptyState";
 import {
   CartAlternativeContainer,

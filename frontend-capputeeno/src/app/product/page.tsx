@@ -19,7 +19,7 @@ import {
   ProductPrice,
   ProductSection,
 } from "./styles";
-import { formatPrice, translateCategory } from "@/utils/produtcs";
+import { formatPrice, translateCategory } from "@/utils/products";
 import { ShopBagIcon } from "@/components/icons/shopbag";
 import { ErrorState } from "@/components/ErrorState";
 import { SkeletonLoadingProduct } from "@/components/skeletonLoading/SkeletonLoadingProduct";

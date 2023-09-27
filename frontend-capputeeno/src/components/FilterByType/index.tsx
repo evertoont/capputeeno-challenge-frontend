@@ -24,7 +24,7 @@ export function FilterByType() {
   };
 
   return (
-    <FilterList>
+    <FilterList data-testid="FilterByType">
       {filterItemsByType.map((item) => {
         return (
           <FilterItem

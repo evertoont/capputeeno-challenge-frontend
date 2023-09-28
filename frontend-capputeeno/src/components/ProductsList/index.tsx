@@ -6,7 +6,7 @@ import { ProductCard } from "../ProductCard";
 import { EmptyState } from "../EmptyState";
 import "react-loading-skeleton/dist/skeleton.css";
 import { ErrorState } from "../ErrorState";
-import { SkeletonProductList } from "../skeletonLoading/SkeletonProducList";
+import { SkeletonProductList } from "../skeletonLoading/SkeletonProductList";
 
 export function ProductsList() {
   const { data: dataAllProducts, isLoading, isError } = useProducts();

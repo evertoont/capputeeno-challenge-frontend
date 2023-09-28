@@ -10,9 +10,7 @@ import {
 import { useFilter } from "@/hooks/useFilter";
 import { ArrowIcon } from "../icons/arrow";
 
-interface PaginationProps {}
-
-export function Pagination(props: PaginationProps) {
+export function Pagination() {
   const { perPage, setPerPage, page, setPage } = useFilter();
   const { totalProducts } = useProducts();
 

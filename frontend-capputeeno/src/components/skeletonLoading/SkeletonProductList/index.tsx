@@ -4,7 +4,7 @@ import { theme } from "@/app/theme";
 
 export function SkeletonProductList() {
   return (
-    <SkeletonContainer>
+    <SkeletonContainer data-testid="SkeletonProductList">
       <Skeleton
         baseColor={theme.colors.shapeSkeletonBase}
         count={30}

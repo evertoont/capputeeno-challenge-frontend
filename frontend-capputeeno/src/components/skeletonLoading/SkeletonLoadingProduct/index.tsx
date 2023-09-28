@@ -6,7 +6,7 @@ import { DefaultPageLayout } from "@/app/styles";
 
 export function SkeletonLoadingProduct() {
   return (
-    <SkeletonContainer>
+    <SkeletonContainer data-testid="SkeletonLoadingProduct">
       <Skeleton
         baseColor={theme.colors.shapeSkeletonBase}
         width={640}

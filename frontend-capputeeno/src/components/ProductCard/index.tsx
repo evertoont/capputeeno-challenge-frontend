@@ -27,7 +27,7 @@ export function ProductCard(props: ProductCardProps) {
   };
 
   return (
-    <ProductCardContainer onClick={handleGoToProduct}>
+    <ProductCardContainer data-testid="ProductCard" onClick={handleGoToProduct}>
       <ProductCardImage src={image} alt={name} />
       <ProductCardInfo>
         <ProductCardName>{name}</ProductCardName>

@@ -4,7 +4,6 @@ import { useProducts } from "@/hooks/useProducts";
 import { ListContainer, SkeletonContainer } from "./styles";
 import { ProductCard } from "../ProductCard";
 import { EmptyState } from "../EmptyState";
-import "react-loading-skeleton/dist/skeleton.css";
 import { ErrorState } from "../ErrorState";
 import { SkeletonProductList } from "../skeletonLoading/SkeletonProductList";
 

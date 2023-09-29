@@ -7,7 +7,7 @@ exports[`CartItem should render CartItem correctly 1`] = `
 >
   <img
     class="sc-grXZZQ bVmYJu"
-    src="https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-04.jpg"
+    src="https://via.placeholder.com/150"
   />
   <div
     class="sc-dkjKgF dJrBAg"

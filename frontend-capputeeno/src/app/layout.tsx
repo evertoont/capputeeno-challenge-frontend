@@ -1,5 +1,6 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import type { Metadata } from "next";
 import { DefaultProviders } from "@/components/DefaultProviders";

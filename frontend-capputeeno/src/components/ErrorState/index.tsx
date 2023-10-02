@@ -9,7 +9,7 @@ export function ErrorState(props: EmptyStateProps) {
   const { children } = props;
 
   return (
-    <ErrorContainer>
+    <ErrorContainer data-testid="ErrorState">
       <ErrorMessage>{children}</ErrorMessage>
       <Error />
     </ErrorContainer>

@@ -4,6 +4,7 @@ exports[`ErrorState should render ErrorState correctly 1`] = `
 <div>
   <div
     class="sc-bcPKhP hKsVlV"
+    data-testid="ErrorState"
   >
     <p
       class="sc-grXZZQ khhJdt"

@@ -9,7 +9,7 @@ export function EmptyState(props: EmptyStateProps) {
   const { children } = props;
 
   return (
-    <EmptyContainer>
+    <EmptyContainer data-testid="EmptyState">
       <EmptyMessage>{children}</EmptyMessage>
       <Empty />
     </EmptyContainer>

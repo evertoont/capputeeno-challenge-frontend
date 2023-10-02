@@ -22,7 +22,7 @@ export function ProductsList() {
       />
     ));
 
-  const renderComponentToRender = () => {
+  const renderComponent = () => {
     const isDataAllProductsEmpty =
       !dataAllProducts || dataAllProducts.length === 0;
 
@@ -47,7 +47,7 @@ export function ProductsList() {
 
   return (
     <ListContainer data-testid="ProductsList">
-      {renderComponentToRender()}
+      {renderComponent()}
     </ListContainer>
   );
 }

@@ -41,8 +41,6 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
     ProductInCart[]
   >("product-cart", []);
 
-  let pageContent: ReactNode = null;
-
   const handleAddToCart = () => {
     if (!data) return;
 
@@ -66,18 +64,18 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
     }
   };
 
-  if (isLoading) {
-    pageContent = <SkeletonLoadingProduct />;
-  }
+  const renderComponent = () => {
+    if (isLoading) {
+      return <SkeletonLoadingProduct />;
+    }
 
-  if (isError) {
-    pageContent = <ErrorState>"Ops! Parece que algo deu errado."</ErrorState>;
-  }
+    if (isError || !data) {
+      return <ErrorState>"Ops! Parece que algo deu errado."</ErrorState>;
+    }
 
-  if (isSuccess) {
-    pageContent = (
+    return (
       <ProductSection>
-        <ProductImage src={data?.image_url || ""} />
+        <ProductImage src={data.image_url || ""} />
         <ProductInfoContainer>
           <ProductInfo>
             <ProductCategory>
@@ -106,13 +104,13 @@ export default function ProductPage(params: PageProps<ProductPageParams>) {
         </ProductInfoContainer>
       </ProductSection>
     );
-  }
+  };
 
   return (
     <DefaultPageLayout>
       <Container>
         <BackButton />
-        {pageContent}
+        {renderComponent()}
       </Container>
     </DefaultPageLayout>
   );

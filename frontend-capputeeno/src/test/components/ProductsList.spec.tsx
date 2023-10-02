@@ -1,4 +1,4 @@
-import * as useProductsFile from "../../hooks/useProducts";
+import * as useProductsFile from "@/hooks/useProducts";
 import { DefaultProviders } from "@/components/DefaultProviders";
 import { ProductsList } from "@/components/ProductsList";
 import { productsMock } from "../mocks/products";

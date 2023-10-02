@@ -4,6 +4,7 @@ exports[`EmptyState should render EmptyState correctly 1`] = `
 <div>
   <div
     class="sc-bcPKhP hKsVlV"
+    data-testid="EmptyState"
   >
     <p
       class="sc-grXZZQ khhJdt"

@@ -14,7 +14,7 @@ export function FilterBar() {
   const showPagination = !activeFilterByType && !searchProduct && !isError;
 
   return (
-    <FilterContainer>
+    <FilterContainer data-testid="FilterBar">
       <FilterPrimaryWrapper>
         <FilterByType />
         <FilterByPriority />

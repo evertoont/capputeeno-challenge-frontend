@@ -28,7 +28,7 @@ export function Pagination() {
   };
 
   return (
-    <FilterPaginationWrapper>
+    <FilterPaginationWrapper data-testid="Pagination">
       <PaginationWrapper>
         <PerPageText>Total por página: </PerPageText>
         <SelectTotalPerPage value={perPage} onChange={handleUpdatePerPage}>

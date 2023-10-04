@@ -14,7 +14,7 @@ export function useProduct(productId: string) {
     }
   `;
 
-  const { data, isLoading, isError, isSuccess } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryFn: () => fetchDataProduct(query),
     queryKey: ["product", productId],
     enabled: !!productId,
@@ -25,6 +25,5 @@ export function useProduct(productId: string) {
     data: data?.data.Product,
     isLoading,
     isError,
-    isSuccess,
   };
 }

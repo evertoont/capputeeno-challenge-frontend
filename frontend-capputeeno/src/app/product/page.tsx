@@ -35,7 +35,7 @@ interface ProductPageParams {
 
 export default function ProductPage(params: PageProps<ProductPageParams>) {
   const { id: productId } = params.searchParams;
-  const { data, isLoading, isError, isSuccess } = useProduct(productId);
+  const { data, isLoading, isError } = useProduct(productId);
   const { maxQuantityItems } = useProductSettings();
   const [productCartList, setProductCartList] = useLocalStorage<
     ProductInCart[]

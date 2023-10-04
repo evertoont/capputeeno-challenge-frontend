@@ -16,7 +16,7 @@ The challenge will be to implement an e-commerce for the sale of mugs and t-shir
 - [X] Add and remove products from cart
 - [X] Checkout
 - [x] Responsive Layout
-- [ ] Tests
+- [X] Tests
 
 ## 🧪 Technologies
 

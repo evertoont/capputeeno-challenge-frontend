@@ -25,7 +25,6 @@ import { ErrorState } from "@/components/ErrorState";
 import { SkeletonLoadingProduct } from "@/components/skeletonLoading/SkeletonLoadingProduct";
 import { useLocalStorage } from "usehooks-ts";
 import { ProductInCart } from "@/types/products";
-import { ReactNode } from "react";
 import { useProductSettings } from "@/hooks/useProductSettings";
 import { toast } from "react-toastify";
 

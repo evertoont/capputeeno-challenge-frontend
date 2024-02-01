@@ -1,7 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { ReactNode, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { ReactNode } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { BackButton } from "@/components/BackButton";
 import { CartItem } from "@/components/CartItem";
@@ -90,12 +90,12 @@ export default function CartPage() {
             </HighlightedText>
           </CartItemsSubTitle>
           <CartItemsList>
-            {productCartList?.map((productCart) => (
+            {productCartList?.map((productCart, index) => (
               <CartItem
                 productInfo={productCart}
                 onRemoveProduct={handleRemoveProduct}
                 onUpdateQuantity={handleUpdateQuantity}
-                key={productCart.id}
+                key={`${productCart.id}-${index}`}
               />
             ))}
           </CartItemsList>
@@ -127,10 +127,10 @@ export default function CartPage() {
             <ShopButton>Finalizar a compra</ShopButton>
           </CartResultContainerInfos>
           <CartAlternativeContainer>
-            {AlternativeLinks.map((alternativeLink) => (
+            {AlternativeLinks.map((alternativeLink, index) => (
               <CartAlternativeLinks
                 href={alternativeLink.link}
-                key={alternativeLink.link}
+                key={`${alternativeLink.link}-${index}`}
                 target="_blank"
                 rel="noreferrer"
               >
